@@ -17,8 +17,12 @@ export const NavigationBox = styled.div`
   position: relative;
 `;
 
-export const Dot = styled.div`
+export const Dot = styled.div<{ display: string }>`
   width: 4px;
   height: 4px;
   background-color: #03a9f4;
+  position: absolute;
+  top: 48px;
+  display: ${(props) => props.display};
+  border-radius: 100%;
 `;
