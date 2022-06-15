@@ -88,7 +88,7 @@ const GlobalStyle = createGlobalStyle`
     border: 0;
     font-size: 100%;
     font: inherit;
-    font-family: "Spoqa Han Sans Neo", "sans-serif";
+    font-family: "noto sans";
     vertical-align: baseline;
     -webkit-font-smoothing: antialiased;
     box-sizing: border-box;
