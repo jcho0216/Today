@@ -1,7 +1,8 @@
 import { FC, useState } from "react";
 import { useSetRecoilState } from "recoil";
 import { CarousalIndex } from "../../state/atoms";
-import * as S from "./styles";
+import { Logo } from "../styles";
+import { Container } from "../styles";
 
 interface Props {
   children: React.ReactNode;
@@ -9,50 +10,38 @@ interface Props {
 
 const Home: FC<Props> = ({ children }) => {
   const [touchStart, setTouchStart] = useState(0);
-  const [touchEnd, setTouchEnd] = useState(0);
-  const [moved, setMoved] = useState(false);
   const setCarousalIndex = useSetRecoilState(CarousalIndex);
 
-  function handleTouchStart(e: any) {
-    setTouchStart(e.targetTouches[0].screenX);
-  }
+  const handleTouchStart = (screenX: number) => {
+    setTouchStart(screenX);
+  };
 
-  function handleTouchMove(e: any) {
-    setMoved(true);
-    setTouchEnd(e.targetTouches[0].screenX);
-  }
-
-  function handleTouchEnd() {
-    if (!moved) return;
-
-    if (touchStart - touchEnd > 30) {
+  const handleTouchEnd = (touchStart: number, touchEnd: number) => {
+    if (touchStart - touchEnd >= 30) {
       setCarousalIndex((prev) => {
-        if (prev >= 4) return prev;
+        if (prev >= 3) return prev;
         return prev + 1;
       });
     }
 
-    if (touchStart - touchEnd < -30) {
+    if (touchStart - touchEnd <= -30) {
       setCarousalIndex((prev) => {
         if (prev <= 0) return prev;
         return prev - 1;
       });
     }
+  };
 
-    setMoved(false);
-  }
   return (
-    <S.HomeContainer
-      onTouchMove={(e) => handleTouchMove(e)}
-      onTouchStart={(e) => handleTouchStart(e)}
-      onTouchEnd={handleTouchEnd}
-      onMouseUp={(e) => console.log(e)}
-      onMouseMove={(e) => console.log(e)}
-      onMouseOut
+    <Container
+      onTouchStart={(e) => handleTouchStart(e.targetTouches[0].screenX)}
+      onTouchEnd={(e) => handleTouchEnd(touchStart, e.changedTouches[0].screenX)}
+      onMouseUp={(e) => handleTouchEnd(touchStart, e.screenX)}
+      onMouseDown={(e) => handleTouchStart(e.screenX)}
     >
-      <S.Logo>투데이</S.Logo>
+      <Logo>투데이</Logo>
       {children}
-    </S.HomeContainer>
+    </Container>
   );
 };
 

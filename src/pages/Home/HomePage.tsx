@@ -1,5 +1,8 @@
 import Home from "../../components/Home/Home";
 import Atmosphere from "../../components/Information/Atmosphere/Atmosphere";
+import Weather from "../../components/Information/Weather/Weather";
+import Knowledge from "../../components/Information/Knowledge/Knowledge";
+import Song from "../../components/Information/\bSong/Song";
 import styled from "styled-components";
 import { useEffect, useState, useRef } from "react";
 import theme from "../../theme/theme";
@@ -32,6 +35,9 @@ const HomePage: React.FC = (): JSX.Element => {
       <CarousalContainer>
         <Carousal ref={carousalRef}>
           <Atmosphere />
+          <Weather />
+          <Knowledge />
+          <Song />
         </Carousal>
       </CarousalContainer>
       <CarousalDotContainer>
@@ -67,12 +73,14 @@ const CarousalDot = styled.div<{ background: string }>`
 `;
 
 const Carousal = styled.div`
-  position: absolute;
-  left: 0;
-  transition: 1s;
+  position: relative;
+  transition: all 1s ease;
+  display: flex;
+  width: fit-content;
 `;
 
 const CarousalContainer = styled.div`
-  width: 100vw;
+  max-width: 100vw;
   position: relative;
+  overflow: hidden;
 `;

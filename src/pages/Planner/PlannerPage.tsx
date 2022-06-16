@@ -1,5 +1,7 @@
+import Planner from "../../components/Planner/Planner";
+
 const PlannerPage: React.FC = (): JSX.Element => {
-  return <div>this is plannerPage</div>;
+  return <Planner />;
 };
 
 export default PlannerPage;

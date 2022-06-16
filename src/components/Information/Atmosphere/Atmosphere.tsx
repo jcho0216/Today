@@ -1,20 +1,16 @@
 import { FC } from "react";
 import * as S from "./styles";
-import styled from "styled-components";
 import { MyHood } from "../../../state/atoms";
 import { useRecoilValue } from "recoil";
 import theme from "../../../theme/theme";
-
-const Subtitle = styled.div`
-  font: ${({ theme }) => theme.fonts.subtitle};
-  color: ${({ theme }) => theme.colors.blue000};
-`;
+import { InformationContainer } from "../styles";
+import { Subtitle } from "../../styles";
 
 const Atmosphere: FC = (): JSX.Element => {
   const myHood = useRecoilValue(MyHood);
 
   return (
-    <S.AtmosphereContainer>
+    <InformationContainer>
       <Subtitle>대기환경정보</Subtitle>
       {myHood === "" ? (
         <div>프로필에서 내 동네를 설정해주세요</div>
@@ -54,7 +50,7 @@ const Atmosphere: FC = (): JSX.Element => {
           </S.ExtraInfoContainer>
         </S.AtmosphereBox>
       )}
-    </S.AtmosphereContainer>
+    </InformationContainer>
   );
 };
 

@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const NavigationWrapper = styled.div`
   position: absolute;
   bottom: 0;
-  width: 100%;
+  width: 100vw;
   height: 60px;
   display: flex;
   background-color: ${(props) => props.theme.colors.gray000};

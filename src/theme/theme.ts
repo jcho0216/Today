@@ -11,7 +11,9 @@ interface Color {
   gray100: string;
   red000: string;
   green000: string;
+  green100: string;
   yellow000: string;
+  yellow100: string;
 }
 
 const fonts: Font = {
@@ -32,7 +34,9 @@ const colors: Color = {
   gray100: "#CFCFCF",
   red000: "#FF6F6A",
   green000: "#78AF58",
+  green100: "#20A03C",
   yellow000: "#DFCF6B",
+  yellow100: "#FFCE31",
 };
 
 const theme: Theme = {
