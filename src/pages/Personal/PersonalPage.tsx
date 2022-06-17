@@ -1,5 +1,7 @@
+import Personal from "../../components/Personal/Personal";
+
 const PersonalPage: React.FC = (): JSX.Element => {
-  return <div>this is personalPage</div>;
+  return <Personal />;
 };
 
 export default PersonalPage;

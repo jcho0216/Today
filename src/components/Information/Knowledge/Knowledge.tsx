@@ -46,9 +46,12 @@ const KnowledgeContainer = styled.div`
 `;
 
 const KnowledgeTitle = styled.picture`
+  font-size: 18px;
   color: ${({ theme }) => theme.colors.yellow100};
-  font-weight: 700;
+  font-weight: 900;
   margin-bottom: 48px;
+  display: flex;
+  align-self: center;
 `;
 
 const DidUKnowText = styled.p`
@@ -61,13 +64,7 @@ const KnowledgeText = styled.div`
   word-break: keep-all;
   text-align: center;
   color: ${({ theme }) => theme.colors.gray000};
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 18px;
+  font-weight: 600;
   display: flex;
-  margin: 0 auto;
-`;
-
-const KnowledgeReference = styled.div`
-  position: absolute;
-  bottom: 2px;
 `;

@@ -3,6 +3,9 @@ import { createRoot } from "react-dom/client";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { RecoilRoot } from "recoil";
 import Router from "./routes/Router";
+// import * as serviceWorkerRegistration from "../serviceWorkerRegistration";
+
+// serviceWorkerRegistration.register();
 
 const queryClient = new QueryClient({
   defaultOptions: {

@@ -38,7 +38,6 @@ const PlannerList: FC<Props> = ({ isChecked, content, index }): JSX.Element => {
       const arr = [...prev];
       arr.splice(index, 1);
 
-      console.log(arr);
       localStorage.setItem("todo-contents", JSON.stringify(arr));
       return arr;
     });

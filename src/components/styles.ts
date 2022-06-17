@@ -12,7 +12,7 @@ export const Container = styled.div`
   padding-top: 60px;
   position: relative;
   height: calc(100vh - 60px);
-  width: 100vw;
+  width: 100%;
 `;
 
 export const Subtitle = styled.div`

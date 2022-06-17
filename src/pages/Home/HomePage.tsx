@@ -21,7 +21,10 @@ const HomePage: React.FC = (): JSX.Element => {
       setWindowWidth(window.innerWidth);
     });
 
-    return () => removeEventListener("resize", () => {});
+    return () => {
+      removeEventListener("resize", () => {});
+      setCarousalIndex(0);
+    };
   }, []);
 
   useEffect(() => {
@@ -77,6 +80,7 @@ const Carousal = styled.div`
   transition: all 1s ease;
   display: flex;
   width: fit-content;
+  height: 100%;
 `;
 
 const CarousalContainer = styled.div`

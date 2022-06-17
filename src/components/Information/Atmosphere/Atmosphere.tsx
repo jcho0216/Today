@@ -21,31 +21,31 @@ const Atmosphere: FC = (): JSX.Element => {
             <S.PMBox>
               <div className="PMS">
                 <S.PMText>미세먼지</S.PMText>
-                <S.PMAmount>82mg/m2</S.PMAmount>
+                <S.PMAmount>24mg/m2</S.PMAmount>
               </div>
-              <S.PMVisualizer background={theme.colors.blue100}>{"매우 좋음"}</S.PMVisualizer>
+              <S.PMVisualizer background={theme.colors.blue100}>{"좋음"}</S.PMVisualizer>
             </S.PMBox>
             <S.PMBox>
               <div className="PMS">
                 <S.PMText>초미세먼지</S.PMText>
-                <S.PMAmount>82mg/m2</S.PMAmount>
+                <S.PMAmount>16mg/m2</S.PMAmount>
               </div>
-              <S.PMVisualizer background={theme.colors.blue100}>{"매우 좋음"}</S.PMVisualizer>
+              <S.PMVisualizer background={theme.colors.green000}>{"보통"}</S.PMVisualizer>
             </S.PMBox>
           </S.PMContainer>
           <S.ExtraInfoContainer>
             <S.ExtraTitle>기타정보</S.ExtraTitle>
-            <S.Extras background={theme.colors.red000}>
+            <S.Extras background={theme.colors.blue100}>
               <S.ExtraText>{"오존"}</S.ExtraText>
-              <S.ExtraAmount>{"매우 나쁨"}</S.ExtraAmount>
+              <S.ExtraAmount>{"좋음"}</S.ExtraAmount>
             </S.Extras>
-            <S.Extras background={theme.colors.green000}>
+            <S.Extras background={theme.colors.blue100}>
               <S.ExtraText>{"이산화탄소"}</S.ExtraText>
-              <S.ExtraAmount>{"보통"}</S.ExtraAmount>
+              <S.ExtraAmount>{"좋음"}</S.ExtraAmount>
             </S.Extras>
-            <S.Extras background={theme.colors.yellow000}>
+            <S.Extras background={theme.colors.blue100}>
               <S.ExtraText>{"일산화탄소"}</S.ExtraText>
-              <S.ExtraAmount>{"나쁨"}</S.ExtraAmount>
+              <S.ExtraAmount>{"좋음"}</S.ExtraAmount>
             </S.Extras>
           </S.ExtraInfoContainer>
         </S.AtmosphereBox>
